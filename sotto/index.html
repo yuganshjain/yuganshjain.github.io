@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sotto — a meeting recorder that never phones home</title>
+  <meta name="description" content="Sotto records, transcribes, labels who spoke and summarises your meetings and lectures entirely on your iPhone. No account, no server, works in airplane mode.">
+  <meta property="og:title" content="Sotto — a meeting recorder that never phones home">
+  <meta property="og:description" content="Records, transcribes, labels who spoke and summarises — entirely on your iPhone.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="sotto.css">
+  <style>
+    .hero { padding: 44px 0 8px; }
+    .hero h1 { max-width: 16ch; }
+    .claim {
+      font-size: 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      background: var(--panel);
+      margin: 30px 0;
+    }
+    .claim strong { color: var(--accent); }
+    .der td:first-child { color: var(--muted); }
+    .num { font-variant-numeric: tabular-nums; }
+    .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 5px 13px; margin-bottom: 6px;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--intelligence);
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-mark">YJ</span>
+        <span>Yugansh Jain</span>
+      </a>
+      <div class="links">
+        <a class="pill" href="/sotto/privacy/">Privacy</a>
+        <a class="pill" href="/sotto/support/">Support</a>
+        <a class="pill" href="mailto:yuganshjain11@gmail.com">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <span class="status"><span class="dot"></span> In development · coming to the App Store</span>
+      <h1>A meeting recorder that never phones home.</h1>
+      <p class="lede">Sotto records your meetings and lectures, writes them down,
+      works out who said what, and summarises the result — entirely on your
+      iPhone. No account. No server. It works in airplane mode.</p>
+    </header>
+
+    <div class="claim">
+      <p><strong>Private by architecture, not by policy.</strong> Most meeting-notes
+      apps promise not to misuse your recordings. Sotto is built so that there is
+      nothing to misuse: the audio never leaves the phone, so there is no server
+      to breach, no retention schedule to trust, and no policy that could quietly
+      change next year.</p>
+      <p style="margin-bottom:0">You don't have to take that on faith. Turn on
+      Airplane Mode and record a meeting. Everything still works.</p>
+    </div>
+
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="feature">
+        <h3>Records</h3>
+        <p>Long-form capture built for real meetings and lectures, with live text
+        as you go and recovery from interruptions.</p>
+      </div>
+      <div class="feature">
+        <h3>Transcribes</h3>
+        <p>Apple's on-device speech recognition, in around 40 languages, with
+        custom vocabulary for names and jargon.</p>
+      </div>
+      <div class="feature">
+        <h3>Labels who spoke</h3>
+        <p>Neural speaker diarisation on the Neural Engine — the thing Voice Memos
+        and Notes don't do.</p>
+      </div>
+      <div class="feature">
+        <h3>Summarises</h3>
+        <p>Abstract, key points and action items, written by Apple's on-device
+        foundation models. Every action item links back to its moment in the audio.</p>
+      </div>
+      <div class="feature">
+        <h3>Exports everything</h3>
+        <p>Text, Markdown, SRT, WebVTT, JSON, and the original audio. All free,
+        all yours, no lock-in.</p>
+      </div>
+      <div class="feature">
+        <h3>Asks for nothing</h3>
+        <p>No sign-up, no email, no analytics, no ads. The app has never heard of
+        you and doesn't need to.</p>
+      </div>
+    </div>
+
+    <h2>Why recording is free and unlimited</h2>
+    <p>Cloud meeting-notes tools pay for every minute they transcribe, which is
+    why their free tiers are so thin. Sotto's transcription runs on hardware you
+    already own, so each additional hour costs nothing to provide — and charging
+    for it would be an invented constraint rather than a real one.</p>
+    <p>So recording, transcription, speaker labels and every export format are
+    unlimited and free, permanently. <strong>Sotto Pro</strong> covers unlimited
+    AI summaries, which are the one genuinely expensive thing the app does, and it
+    pays for the app's continued development. The free tier includes ten summaries
+    a month.</p>
+
+    <h2>Speaker labelling, measured</h2>
+    <p>Telling voices apart is the hard part and the part most likely to be
+    oversold, so it is measured rather than asserted. These are scores against the
+    AMI Meeting Corpus and its human annotation, using diarisation error rate —
+    lower is better. Two of the four meetings were held out entirely during
+    tuning.</p>
+
+    <div class="scroll-x">
+      <table class="der">
+        <thead>
+          <tr><th>Meeting</th><th>Recording condition</th><th>Speakers found</th><th>Error rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ES2004a</td><td>Close-talk microphones</td><td class="num">4 / 4</td><td class="num">9.7%</td></tr>
+          <tr><td>ES2004a</td><td>One distant microphone</td><td class="num">4 / 4</td><td class="num">16.3%</td></tr>
+          <tr><td>IS1009a <span class="muted">(held out)</span></td><td>One distant microphone</td><td class="num">4 / 4</td><td class="num">24.2%</td></tr>
+          <tr><td>TS3003a <span class="muted">(held out)</span></td><td>One distant microphone</td><td class="num">4 / 4</td><td class="num">20.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="muted" style="font-size:0.9rem">An earlier fallback that guessed at
+    speakers without the neural models scored close to a coin flip, so it was
+    removed rather than tuned. When Sotto can't identify speakers, it says so
+    instead of guessing — for a therapist or a lawyer, a confident wrong
+    attribution is worse than none.</p>
+
+    <h2>What it can't do</h2>
+    <p>Worth knowing before you rely on it:</p>
+    <ul>
+      <li><strong>It can't record phone or video calls.</strong> iOS gives no app
+      access to call or system audio. Sotto is for conversations in the room.</li>
+      <li><strong>Summaries need Apple Intelligence</strong>, so they require
+      iPhone 15 Pro or newer. Recording, transcription and speaker labels work on
+      older hardware.</li>
+      <li><strong>Summaries can be wrong.</strong> A small on-device model is
+      still a model. Every claim links back to the audio so you can check it.</li>
+      <li><strong>It requires iOS 26</strong>, because the on-device speech and
+      language frameworks it is built on are new.</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <ul>
+      <li>iPhone or iPad running iOS 26 or later</li>
+      <li>iPhone 15 Pro or newer for AI summaries</li>
+      <li>A one-time download for the speaker-labelling models; after that,
+      no connection needed</li>
+    </ul>
+
+    <div class="actions">
+      <a class="button" href="/sotto/support/">Support</a>
+      <a class="button ghost" href="/sotto/privacy/">Privacy Policy</a>
+    </div>
+
+    <footer>
+      Sotto · <em>sotto voce</em>, in a quiet voice.<br>
+      <a href="/sotto/privacy/">Privacy</a> · <a href="/sotto/support/">Support</a> ·
+      <a href="/">Developer website</a> ·
+      <a href="mailto:yuganshjain11@gmail.com">yuganshjain11@gmail.com</a>
+      <p style="margin-top:10px">© 2026 Yugansh Jain</p>
+    </footer>
+  </div>
+</body>
+</html>

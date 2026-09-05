@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sotto Support</title>
+  <meta name="description" content="Help with Sotto — requirements, speaker labels, summaries, subscriptions and troubleshooting.">
+  <link rel="stylesheet" href="../sotto.css">
+  <style>
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      background: var(--panel);
+    }
+    details[open] { border-color: rgba(206, 117, 76, 0.4); }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "+";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    details[open] summary::before { content: "−"; }
+    details p:first-of-type { margin-top: 12px; }
+    details p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/">
+        <span class="brand-mark">YJ</span>
+        <span>Yugansh Jain</span>
+      </a>
+      <div class="links">
+        <a class="pill" href="/sotto/">Sotto</a>
+        <a class="pill" href="/sotto/privacy/">Privacy</a>
+        <a class="pill" href="mailto:yuganshjain11@gmail.com">Contact</a>
+      </div>
+    </nav>
+
+    <p class="eyebrow" style="margin-top:34px">Sotto</p>
+    <h1>Support</h1>
+    <p class="lede">Answers to the things that come up most, and a direct line to
+    me if yours isn't here.</p>
+
+    <div class="callout">
+      <p style="margin-bottom:6px"><strong>Email:</strong>
+      <a href="mailto:yuganshjain11@gmail.com">yuganshjain11@gmail.com</a></p>
+      <p style="margin-bottom:0" class="muted">Please include your device model,
+      your iOS version, and what you were doing when it went wrong. If it involves
+      a specific recording, its length helps. Don't send the recording itself —
+      I don't want it, and you shouldn't have to hand it over to get help.</p>
+    </div>
+
+    <h2>Requirements</h2>
+    <div class="grid">
+      <div class="feature">
+        <h3>iOS 26 or later</h3>
+        <p>Sotto is built on speech and language frameworks introduced in iOS 26.
+        It cannot run on earlier versions.</p>
+      </div>
+      <div class="feature">
+        <h3>iPhone 15 Pro or newer</h3>
+        <p>Needed for AI summaries only. Recording, transcription and speaker
+        labels work on older supported hardware.</p>
+      </div>
+      <div class="feature">
+        <h3>One-time download</h3>
+        <p>Speaker labelling fetches its models once. After that it works with no
+        connection at all.</p>
+      </div>
+    </div>
+
+    <h2>Common questions</h2>
+
+    <details>
+      <summary>Can Sotto record phone calls, FaceTime, or Zoom?</summary>
+      <p>No. iOS does not give any third-party app access to call audio or to
+      other apps' audio, and there is no workaround — this is a platform
+      restriction, not a missing feature.</p>
+      <p>Sotto records what the microphone hears, so it is built for conversations
+      happening in the room: meetings, lectures, interviews, consultations.</p>
+    </details>
+
+    <details>
+      <summary>Why don't I see speaker names?</summary>
+      <p>Speaker labelling needs its models, which download once on first use. If
+      the download hasn't happened yet, open a recording, go to the Speakers pane,
+      and it will offer the download. You'll need a connection for that one step.</p>
+      <p>If the models aren't available, Sotto shows you where the speaker changes
+      but does not attach names. That is deliberate: it would rather show nothing
+      than confidently attribute a sentence to the wrong person.</p>
+    </details>
+
+    <details>
+      <summary>Why is the Summarise button unavailable?</summary>
+      <p>Two possibilities. Either your device doesn't support Apple Intelligence
+      — summaries need an iPhone 15 Pro or newer — or you've used your ten free
+      summaries for this month. The counter resets on the first of each month, and
+      Sotto Pro removes the limit.</p>
+      <p>Recording, transcription, speaker labels and every export format are
+      unlimited and free regardless.</p>
+    </details>
+
+    <details>
+      <summary>Is a summary trustworthy?</summary>
+      <p>Treat it as a good first draft, not a record. The model runs on your
+      phone and is small; it can misread a conversation, especially a noisy or
+      technical one.</p>
+      <p>Every action item links back to the moment in the audio it came from, so
+      you can check anything that matters in a couple of seconds. For anything
+      consequential, check it.</p>
+    </details>
+
+    <details>
+      <summary>Does recording keep working when I lock the phone?</summary>
+      <p>Yes. Sotto keeps recording with the screen off or when you switch to
+      another app.</p>
+      <p>If a recording ever stops unexpectedly, please email me with your device
+      and iOS version — that is exactly the kind of report worth having.</p>
+    </details>
+
+    <details>
+      <summary>Where are my recordings, and how do I get them out?</summary>
+      <p>They're stored inside the app on your device. Open a recording and use
+      Export to get it out as plain text, Markdown, SRT, WebVTT, JSON, or the
+      original audio file. All formats are free.</p>
+      <p>Recordings are excluded from device backups by default, so a new phone
+      restored from backup will not have them. You can change that in Settings
+      under <em>Include recordings in device backups</em> — read
+      <a href="/sotto/privacy/">the privacy policy</a> first, since it means an
+      off-device copy exists.</p>
+    </details>
+
+    <details>
+      <summary>I deleted a recording by mistake. Can it be recovered?</summary>
+      <p>No. There is no server holding a copy and no trash folder, so deletion is
+      permanent. That is the direct trade-off for nothing being uploaded anywhere.</p>
+      <p>If a recording matters, export it as soon as it finishes.</p>
+    </details>
+
+    <details>
+      <summary>How do I restore a purchase on a new device?</summary>
+      <p>Open the upgrade screen and tap <strong>Restore</strong> in the top
+      right, signed in with the same Apple Account that bought it. Sotto Pro
+      carries across your devices at no extra cost.</p>
+    </details>
+
+    <details>
+      <summary>How do I cancel my subscription?</summary>
+      <p>Subscriptions are managed by Apple, not by Sotto. Open the iOS
+      <strong>Settings</strong> app, tap your name at the top, then
+      <strong>Subscriptions</strong>, and cancel from there.</p>
+      <p>Cancelling stops future renewals; you keep Pro until the period you've
+      already paid for ends.</p>
+    </details>
+
+    <details>
+      <summary>Can I get a refund?</summary>
+      <p>Refunds are handled entirely by Apple — I can't issue one, because the
+      payment never passes through me. Request one at
+      <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+      <p>That said, if something about the app caused the problem, please tell me
+      as well. I'd rather fix it.</p>
+    </details>
+
+    <details>
+      <summary>Is it legal to record a conversation?</summary>
+      <p>It depends where you are. Some places require only one participant to
+      consent; others require everyone. Some contexts — medical, legal,
+      educational — have rules of their own on top.</p>
+      <p>Sotto includes a consent reminder and an optional tone that sounds when
+      recording starts, but complying with the law that applies to you is your
+      responsibility. Sotto is a recorder, not a legal adviser.</p>
+    </details>
+
+    <details>
+      <summary>Something else is wrong.</summary>
+      <p>Email <a href="mailto:yuganshjain11@gmail.com">yuganshjain11@gmail.com</a>
+      with your device model, iOS version, and what happened. Bug reports from
+      real use are genuinely useful and I read all of them.</p>
+    </details>
+
+    <div class="actions">
+      <a class="button" href="mailto:yuganshjain11@gmail.com">Email support</a>
+      <a class="button ghost" href="/sotto/privacy/">Privacy Policy</a>
+    </div>
+
+    <footer>
+      <a href="/sotto/">Sotto</a> · <a href="/sotto/privacy/">Privacy</a> ·
+      <a href="/">Developer website</a>
+      <p style="margin-top:10px">© 2026 Yugansh Jain</p>
+    </footer>
+  </div>
+</body>
+</html>
